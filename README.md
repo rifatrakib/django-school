@@ -1,2 +1,3 @@
-# django-school
-School management system using Django Framework
+# School Management Toolkits
+
+This is an advanced school management system with role-based authentication built on `Django` Web Framework integrated with Data analysis using `Pandas` module and Data visualization using `Matplotlib` and `Seaborn`, mathematical calculation done with `Numpy` and `Scipy`, account management systems for the users. Monitoring systems are integrated along several apps of this project. Users can manage resources they own and like using personalization tools for their profiles. Parental supervision can be enabled in cases of necessity. Find all the modules used in this project in the [`requirements.txt`](https://github.com/Rakib1508/django-school/blob/master/requirements.txt) file.
