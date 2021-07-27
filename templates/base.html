@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <!-- bootstrap css & jquery (cdn) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+        integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <!-- bootstrap css & jquery (local) -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"> -->
+    <!-- <script src="{% static 'js/jquery.min.js' %}" defer></script> -->
+    <!-- custom css -->
+    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>DjSchool | {% block title %}{% endblock %}</title>
+</head>
+
+<body class="theme fill">
+    {% include 'navbar.html' %}
+    <div class="container-fluid">
+        <div class="row content-body vh-100">
+            <div class="col-2 sidebar position-fixed">
+                {% include 'sidebar.html' %}
+            </div>
+            <div class="col-10 main-content offset-lg-2">
+                <div class="container-fluid">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+        integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- bootstrap js (cdn) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"
+        integrity="sha512-a6ctI6w1kg3J4dSjknHj3aWLEbjitAXAjLDRUxo2wyYmDFRcz2RJuQr5M3Kt8O/TtUSp8n2rAyaXYy1sjoKmrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <!-- bootstrap js (local) -->
+    <!-- <script src="{% static 'js/bootstrap.min.js' %}" defer></script> -->
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>
