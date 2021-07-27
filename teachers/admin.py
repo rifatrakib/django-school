@@ -4,7 +4,7 @@ from .models import Teacher
 
 
 class TeacherAdmin(admin.ModelAdmin):
-    ordering = ('-started_on', 'identity',)
+    ordering = ('-started_on',)
 
 
 admin.site.register(Teacher, TeacherAdmin)

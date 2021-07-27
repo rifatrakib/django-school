@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import CustomUser
+from .models import CustomUser, Profile
 from .forms import CustomUserCreationForm
 
 
@@ -14,6 +14,7 @@ class CustomUserAdmin(UserAdmin):
         'phone_number', 'username')
     ordering = ('username',)
     list_filter = ('sex', 'role', 'birthday', 'date_joined')
+    list_display = ('username', '__str__', 'email', 'role', 'sex', 'is_staff')
 
     fieldsets = (
         *UserAdmin.fieldsets,
@@ -25,3 +26,4 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(Profile)

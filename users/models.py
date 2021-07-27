@@ -4,11 +4,8 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 ROLES = (
-    ('Admin', 'Admin'),
     ('Student', 'Student'),
     ('Teacher', 'Teacher'),
-    ('Parents', 'Parents'),
-    ('Supervisor', 'Supervisor'),
 )
 
 GENDERS = (
