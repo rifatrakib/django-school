@@ -1,7 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}Home{% endblock %}
 {% block content %}
-<div class="">
-    <h2>Welcome to Dashboard</h2>
+<div class="container-fluid">
+    <div class="row p-4">
+        <h1 class="mb-4">Welcome, Anonymous user!</h1>
+        <div class="col-2">
+            <img src="{% static 'images/blank.png' %}" height="150px" width="150px">
+        </div>
+        <div class="col-10">
+            <p class="fw-bold text-dark">
+                Django School provides you with an elegent school management system
+                with cool analytical tools. You can use these tools to view your
+                academic performance at ease and plan accordingly. In the future,
+                we will suggest you with ways you can follow to cultivate skills and
+                improve yourself. Please send us feedbacks so that we can know your
+                needs and provide improved tools for you.
+            </p>
+            <button type="button" class="btn btn-primary mr-1">Go to Profile</button>
+            <button type="button" class="btn btn-secondary">Contact Us</button>
+            <button type="button" class="btn btn-danger">Follow Us</button>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -5,13 +5,14 @@
 
 html,
 body {
-    min-height: 100%;
-    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .navigator {
     font-size: 20px;
     z-index: 1000;
+    padding-right: 15px;
 }
 
 .navbar-brand {
@@ -21,19 +22,18 @@ body {
     padding-left: 30px;
 }
 
-.sidebar {
+/* .sidebar {
     border-right: 1px solid white;
-}
+} */
 
-.content-body {
-    padding-top: 80px;
+.top-spacing {
+    height: 80px;
 }
 
 .main-content {
     background-color: #ffffff;
     color: #000000;
     padding: 10px;
-    min-height: 100%;
 }
 
 .dropdown-item {
@@ -41,5 +41,39 @@ body {
 }
 
 .accordion-button:not(.collapsed) {
-    color: black !important;
+    color: white !important;
+    background-color: inherit;
+}
+
+.accordion-button:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.content-body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#dash-col {
+    background: red;
+    animation: mymove 10s infinite;
+    height: 300px;
+}
+
+@keyframes mymove {
+    0% {
+        background-color: orange;
+    }
+    50% {
+        background-color: orangered;
+    }
+    100% {
+        background-color: orange;
+    }
 }
