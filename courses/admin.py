@@ -13,15 +13,15 @@ class CourseAdmin(admin.ModelAdmin):
 class InstructorAdmin(admin.ModelAdmin):
     ordering = ('course', 'teacher')
     search_fields = ('course', 'teacher')
-    list_display = ('course', 'teacher')
+    list_display = ('course', 'teacher', 'about')
     list_filter = ('course', 'teacher')
 
 
 class EnrollmentAdmin(admin.ModelAdmin):
     ordering = ('course', 'student')
     search_fields = ('course', 'student')
-    list_display = ('course', 'student')
-    list_filter = ('course', 'student')
+    list_display = ('course', 'student', 'score', 'grade', 'status')
+    list_filter = ('course', 'student', 'grade', 'status')
 
 
 admin.site.register(Course, CourseAdmin)

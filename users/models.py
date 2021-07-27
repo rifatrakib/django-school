@@ -34,3 +34,15 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.owner.__str__()
+
+    def start_date(self):
+        return self.owner.date_joined
+
+    def username(self):
+        return self.owner.username
+
+    def gender(self):
+        return self.owner.sex
+
+    def phone_number(self):
+        return self.owner.phone_number

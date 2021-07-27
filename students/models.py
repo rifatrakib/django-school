@@ -10,3 +10,12 @@ class Student(models.Model):
 
     def __str__(self):
         return self.student.__str__()
+
+    def username(self):
+        return self.student.username
+
+    def gender(self):
+        return self.student.sex
+
+    def phone_number(self):
+        return self.student.phone_number

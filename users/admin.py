@@ -25,5 +25,11 @@ class CustomUserAdmin(UserAdmin):
     )
 
 
+class ProfileAdmin(admin.ModelAdmin):
+    ordering = ('owner',)
+    list_display = ('username', 'owner', 'gender',
+                    'phone_number', 'start_date', 'address')
+
+
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(Profile)
+admin.site.register(Profile, ProfileAdmin)
