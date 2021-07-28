@@ -20,8 +20,9 @@ class InstructorAdmin(admin.ModelAdmin):
 class EnrollmentAdmin(admin.ModelAdmin):
     ordering = ('course', 'student')
     search_fields = ('course', 'student')
-    list_display = ('course', 'student', 'score', 'grade', 'status')
-    list_filter = ('course', 'student', 'grade', 'status')
+    list_display = ('course', 'student', 'semester',
+                    'score', 'grade', 'status')
+    list_filter = ('course', 'student', 'semester', 'grade', 'status')
 
 
 admin.site.register(Course, CourseAdmin)

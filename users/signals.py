@@ -1,9 +1,8 @@
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 
 from .models import CustomUser, Profile
-from teachers.models import Teacher
-from students.models import Student
+from courses.models import Enrollment
 
 
 @receiver(post_save, sender=CustomUser)

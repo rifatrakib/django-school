@@ -36,6 +36,7 @@ class Instructor(models.Model):
 class Enrollment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course = models.ForeignKey(Instructor, on_delete=models.CASCADE)
+    semester = models.PositiveIntegerField()
     score = models.PositiveIntegerField(
         blank=True, null=True, validators=[MinValueValidator(0), MaxValueValidator(100)])
     grade = models.CharField(max_length=5, blank=True, null=True)
@@ -47,3 +48,20 @@ class Enrollment(models.Model):
 
     def __str__(self):
         return f'{self.student.__str__()} takes {self.course.course.title}'
+
+    def save(self, *args, **kwargs):
+        if self.score:
+            mark = self.score // 10
+            self.status = 'Passed'
+            if mark > 8:
+                self.grade = 'A'
+            elif mark > 7:
+                self.grade = 'B'
+            elif mark > 6:
+                self.grade = 'C'
+            elif mark > 5:
+                self.grade = 'D'
+            else:
+                self.grade = 'F'
+                self.status = 'Failed'
+        return super().save(*args, **kwargs)
