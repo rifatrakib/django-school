@@ -86,3 +86,17 @@ body {
     border-bottom: 3px dashed rgba(255, 255, 255, 0.25);
     padding-bottom: 15px;
 }
+
+.counter {
+    font-size: 32px;
+    text-align: center;
+}
+
+.dash-tiles {
+    opacity: 1;
+}
+
+.dash-tiles:hover {
+    opacity: 0.75;
+    box-shadow: 5px 5px 1px 1px rgba(0, 0, 0, 0.25);
+}
