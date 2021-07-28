@@ -77,3 +77,12 @@ body {
         background-color: orange;
     }
 }
+
+.welcome-text {
+    font-size: 20px;
+}
+
+.dash-segment {
+    border-bottom: 3px dashed rgba(255, 255, 255, 0.25);
+    padding-bottom: 15px;
+}
