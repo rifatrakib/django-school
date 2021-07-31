@@ -81,7 +81,7 @@
     <hr>
     <div class="row mt-5 mb-3">
         <h2>Data Dashboard</h2>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="row">
                 <center class="col-md-6">
                     <div class="card text-white bg-primary mb-4 mt-2 dash-tiles">
@@ -90,7 +90,7 @@
                             <h3 class="card-title">Average</h3>
                             <p class="card-text">
                                 Averaged value found
-                                <span class="badge bg-warning fa-1x rounded-pill text-dark">4.00</span>
+                                <span class="badge bg-warning fa-1x rounded-pill text-dark" id="average">0.00</span>
                             </p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                             <h3 class="card-title">Std Deviation</h3>
                             <p class="card-text">
                                 Standard deviation found
-                                <span class="badge bg-warning fa-1x rounded-pill text-dark">4.00</span>
+                                <span class="badge bg-warning fa-1x rounded-pill text-dark" id="std-deviation">0.00</span>
                             </p>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                             <h3 class="card-title">Minimum</h3>
                             <p class="card-text">
                                 Minimum value found
-                                <span class="badge bg-warning fa-1x rounded-pill text-dark">4.00</span>
+                                <span class="badge bg-warning fa-1x rounded-pill text-dark" id="minimum">0.00</span>
                             </p>
                         </div>
                     </div>
@@ -126,31 +126,30 @@
                             <h3 class="card-title">Maximum</h3>
                             <p class="card-text">
                                 Maximum value found
-                                <span class="badge bg-warning fa-1x rounded-pill text-dark">4.00</span>
+                                <span class="badge bg-warning fa-1x rounded-pill text-dark" id="maximum">0.00</span>
                             </p>
                         </div>
                     </div>
                 </center>
             </div>
-            <hr>
-            <h4 class="mt-3">Create new record</h4>
+        </div>
+        <div class="col-md-6">
+            <h4 class="mt-3">Generate Chart</h4>
             <form id="chart-form" method="POST">
                 {% csrf_token %}
                 {{ form }}<br>
                 <button type="submit" class="btn btn-primary mb-1">Submit</button>
             </form>
-            <hr>
-            <div class="row">
-                <div class="btn-group d-flex" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" class="btn btn-danger m-1 w-100">Create report</button>
-                    <button type="button" class="btn btn-warning m-1 w-100">View report</button>
-                    <button type="button" class="btn btn-success m-1 w-100">Download</button>
+        </div>
+        <center class="col-md-8 offset-md-2 mt-5">
+            <img id="show-chart" src="">
+            <div class="row d-none mt-4" id="button-panel">
+                <div class="btn-group col-md-6 offset-md-3" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger m-1">Create report</button>
+                    <button type="button" class="btn btn-warning m-1">View report</button>
+                    <button type="button" class="btn btn-success m-1">Download</button>
                 </div>
             </div>
-        </div>
-        <center class="col-md-8">
-            <img src="https://www.machinelearningplus.com/wp-content/uploads/2018/11/23_DensityPlot_With_Histogram_Matplotlib-min.png"
-                class="mt-2 mb-2" width="100%" height="auto">
         </center>
     </div>
     <hr>

@@ -1,3 +1,5 @@
+from students.models import Student
+
 from io import BytesIO
 
 import base64
@@ -20,3 +22,13 @@ def generate_chart_image(chart_type, *args, **kwargs):
     plt.switch_backend('AGG')
     fig = plt.figure(figsize=(10, 5))
     data = kwargs.get('data')
+    if chart_type == 'Bar Chart':
+        sns.barplot(x=data['student'], y=data['score'], data=data['score'])
+    plt.tight_layout()
+    chart = get_image()
+    return chart
+
+
+def get_student_name(value):
+    student = Student.objects.get(student_id=value)
+    return student.__str__()
